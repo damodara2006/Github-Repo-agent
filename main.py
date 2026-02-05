@@ -15,14 +15,14 @@ load_dotenv()
 # print(Path.cwd())
 # GithubFileLoader()
 @app.post("/")
-async def func(res : Request, repo_name:str):
+async def func(res : Request, github_username:str, repo_name:str):
     try:
         header = res.headers
         auth = header.get("authorization")
     
         auth = auth.split(" ")[1]
         loader = GithubFileLoader(
-            repo=f"damodara2006/{repo_name}", 
+            repo=f"{github_username}/{repo_name}", 
             branch="main",  
             access_token=auth,
             github_api_url="https://api.github.com",

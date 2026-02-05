@@ -52,7 +52,7 @@ The server will run on `http://localhost:8000`
 Send a POST request to generate a README using curl or Postman to get the output in the terminal:
 
 ```bash
-curl -X POST "http://localhost:8000/?repo_name=your-repo-name" \
+curl -X POST "http://localhost:8000/?github_username=your-github-usenname&repo_name=your-repo-name" \
   -H "Authorization: Bearer your-github-token"
 ```
 
